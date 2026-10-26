@@ -226,8 +226,8 @@ The frontend application will be available at:
 ## 9. Docker Deployment & Container Images
 
 ### 9.1 Docker Hub Published Images
-- **Backend Image:** `nileshpandey05/wind-forecast-backend:latest`
-- **Frontend Image:** `nileshpandey05/wind-forecast-frontend:latest`
+- **Backend Image:** [nilesh2311/wind-forecast-backend:latest](https://hub.docker.com/r/nilesh2311/wind-forecast-backend)
+- **Frontend Image:** [nilesh2311/wind-forecast-frontend:latest](https://hub.docker.com/r/nilesh2311/wind-forecast-frontend)
 
 ### 9.2 Running with Docker Compose
 To pull and start the platform:
@@ -242,14 +242,14 @@ docker compose up --build
 - Backend API: `http://localhost:8000/`
 
 ### 9.3 Pushing Images to Docker Hub
-To push the tagged images to your Docker Hub account:
+To push new builds of the tagged images:
 ```bash
-# 1. Login to Docker Hub (enter Personal Access Token or password)
-docker login -u nileshpandey05
+# 1. Login to Docker Hub
+docker login -u nilesh2311
 
 # 2. Push both backend and frontend images
-docker push nileshpandey05/wind-forecast-backend:latest
-docker push nileshpandey05/wind-forecast-frontend:latest
+docker push nilesh2311/wind-forecast-backend:latest
+docker push nilesh2311/wind-forecast-frontend:latest
 ```
 
 ---

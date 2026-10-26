@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-DOCKER_USER="${1:-nileshpandey05}"
+DOCKER_USER="${1:-nilesh2311}"
 
 echo "=================================================="
 echo " Wind Forecast Intelligence — Docker Hub Push"
