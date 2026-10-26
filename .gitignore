@@ -23,7 +23,14 @@ npm-debug.log*
 .DS_Store
 Thumbs.db
 
-# Video & Audio Demo Artifacts
+# Media & Video files (Do not push to git)
+*.mp4
+*.mp3
+*.wav
+*.mov
+*.mkv
+*.avi
 video_demo/*.mp4
 video_demo/*.mp3
+video_demo/*.wav
 
