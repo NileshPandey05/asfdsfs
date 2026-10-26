@@ -5,7 +5,9 @@
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.110+-009688.svg?style=flat&logo=FastAPI&logoColor=white)](https://fastapi.tiangolo.com)
 [![React](https://img.shields.io/badge/React-18.3+-61DAFB.svg?style=flat&logo=React&logoColor=black)](https://react.dev)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.6+-3178C6.svg?style=flat&logo=TypeScript&logoColor=white)](https://www.typescriptlang.org)
-[![Docker](https://img.shields.io/badge/Docker-Compose-2496ED.svg?style=flat&logo=Docker&logoColor=white)](https://www.docker.com)
+[![Live Web Application](https://img.shields.io/badge/Live%20App-Vercel-black?style=flat&logo=vercel)](https://asfdsfs-five.vercel.app/)
+[![Live Backend API](https://img.shields.io/badge/Backend%20API-Render-46E3B7?style=flat&logo=render&logoColor=white)](https://asfdsfs.onrender.com/docs)
+[![Docker Hub](https://img.shields.io/badge/Docker-Hub%20Images-2496ED.svg?style=flat&logo=Docker&logoColor=white)](https://hub.docker.com/r/nilesh2311/wind-forecast-backend)
 [![Python Tests](https://img.shields.io/badge/pytest-13%20passed-brightgreen.svg?style=flat)](file:///home/cwd/Desktop/personal/sfsdfs/backend/tests)
 
 ---
@@ -240,6 +242,12 @@ docker compose up --build
 ```
 - Frontend UI: `http://localhost:3000/`
 - Backend API: `http://localhost:8000/`
+
+### 9.3 Live Production Deployments
+- **Production Web Application:** [https://asfdsfs-five.vercel.app/](https://asfdsfs-five.vercel.app/)
+- **Live FastAPI Backend:** [https://asfdsfs.onrender.com/](https://asfdsfs.onrender.com/)
+- **Swagger Interactive API Documentation:** [https://asfdsfs.onrender.com/docs](https://asfdsfs.onrender.com/docs)
+- **API Health Endpoint:** [https://asfdsfs.onrender.com/api/health](https://asfdsfs.onrender.com/api/health)
 
 ---
 
