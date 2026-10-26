@@ -32,7 +32,7 @@ export const OverviewView: React.FC<Props> = ({ data, onSelectInterval, onNaviga
           justifyContent: 'space-between',
           flexWrap: 'wrap',
           gap: 16,
-          background: 'linear-gradient(90deg, rgba(2, 132, 199, 0.12) 0%, rgba(15, 23, 42, 0.6) 100%)'
+          background: 'linear-gradient(90deg, rgba(2, 132, 199, 0.08) 0%, rgba(255, 255, 255, 0.9) 100%)'
         }}
       >
         <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
@@ -41,17 +41,17 @@ export const OverviewView: React.FC<Props> = ({ data, onSelectInterval, onNaviga
               width: 36,
               height: 36,
               borderRadius: 8,
-              background: 'rgba(56, 189, 248, 0.15)',
+              background: 'rgba(2, 132, 199, 0.12)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              color: '#38bdf8'
+              color: '#0284c7'
             }}
           >
             <Activity size={20} />
           </div>
           <div>
-            <div style={{ fontWeight: 700, color: '#fff', fontSize: '0.94rem' }}>
+            <div style={{ fontWeight: 700, color: 'var(--foreground)', fontSize: '0.94rem' }}>
               Day-Ahead Procurement Decision Evaluation Period: January 2026
             </div>
             <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>
@@ -76,7 +76,7 @@ export const OverviewView: React.FC<Props> = ({ data, onSelectInterval, onNaviga
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 20 }}>
         {/* Extreme Days Card */}
         <div className="card-glass" style={{ padding: 22 }}>
-          <h3 style={{ fontSize: '0.9rem', fontWeight: 700, color: '#fff', marginBottom: 14, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+          <h3 style={{ fontSize: '0.9rem', fontWeight: 700, color: 'var(--foreground)', marginBottom: 14, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
             Daily Accuracy Extremes
           </h3>
 
@@ -88,26 +88,26 @@ export const OverviewView: React.FC<Props> = ({ data, onSelectInterval, onNaviga
                   justifyContent: 'space-between',
                   alignItems: 'center',
                   padding: 12,
-                  background: 'rgba(239, 68, 68, 0.08)',
-                  border: '1px solid rgba(239, 68, 68, 0.2)',
+                  background: 'rgba(220, 38, 38, 0.06)',
+                  border: '1px solid rgba(220, 38, 38, 0.2)',
                   borderRadius: 10
                 }}
               >
                 <div>
-                  <div style={{ fontSize: '0.75rem', color: '#f87171', fontWeight: 600, display: 'flex', alignItems: 'center', gap: 4 }}>
+                  <div style={{ fontSize: '0.75rem', color: '#b91c1c', fontWeight: 600, display: 'flex', alignItems: 'center', gap: 4 }}>
                     <ArrowUpRight size={14} /> Peak Forecast Divergence
                   </div>
-                  <div style={{ fontWeight: 700, color: '#fff', fontSize: '0.92rem' }}>
+                  <div style={{ fontWeight: 700, color: 'var(--foreground)', fontSize: '0.92rem' }}>
                     {worstDay.date}
                   </div>
                 </div>
                 <div style={{ textAlign: 'right' }}>
-                  <div className="mono-num" style={{ fontSize: '1.1rem', fontWeight: 700, color: '#f87171' }}>
+                  <div className="mono-num" style={{ fontSize: '1.1rem', fontWeight: 700, color: '#b91c1c' }}>
                     {formatMW(worstDay.mae_mw)} MAE
                   </div>
                   <button
                     onClick={() => onNavigateToExplorer(worstDay.date)}
-                    style={{ background: 'transparent', border: 'none', color: '#38bdf8', fontSize: '0.72rem', cursor: 'pointer', textDecoration: 'underline' }}
+                    style={{ background: 'transparent', border: 'none', color: '#0284c7', fontSize: '0.72rem', cursor: 'pointer', textDecoration: 'underline' }}
                   >
                     Inspect Intervals &rarr;
                   </button>
@@ -122,26 +122,26 @@ export const OverviewView: React.FC<Props> = ({ data, onSelectInterval, onNaviga
                   justifyContent: 'space-between',
                   alignItems: 'center',
                   padding: 12,
-                  background: 'rgba(16, 185, 129, 0.08)',
-                  border: '1px solid rgba(16, 185, 129, 0.2)',
+                  background: 'rgba(5, 150, 105, 0.06)',
+                  border: '1px solid rgba(5, 150, 105, 0.2)',
                   borderRadius: 10
                 }}
               >
                 <div>
-                  <div style={{ fontSize: '0.75rem', color: '#34d399', fontWeight: 600, display: 'flex', alignItems: 'center', gap: 4 }}>
+                  <div style={{ fontSize: '0.75rem', color: '#047857', fontWeight: 600, display: 'flex', alignItems: 'center', gap: 4 }}>
                     <ArrowDownRight size={14} /> Highest Forecast Precision
                   </div>
-                  <div style={{ fontWeight: 700, color: '#fff', fontSize: '0.92rem' }}>
+                  <div style={{ fontWeight: 700, color: 'var(--foreground)', fontSize: '0.92rem' }}>
                     {bestDay.date}
                   </div>
                 </div>
                 <div style={{ textAlign: 'right' }}>
-                  <div className="mono-num" style={{ fontSize: '1.1rem', fontWeight: 700, color: '#34d399' }}>
+                  <div className="mono-num" style={{ fontSize: '1.1rem', fontWeight: 700, color: '#047857' }}>
                     {formatMW(bestDay.mae_mw)} MAE
                   </div>
                   <button
                     onClick={() => onNavigateToExplorer(bestDay.date)}
-                    style={{ background: 'transparent', border: 'none', color: '#38bdf8', fontSize: '0.72rem', cursor: 'pointer', textDecoration: 'underline' }}
+                    style={{ background: 'transparent', border: 'none', color: '#0284c7', fontSize: '0.72rem', cursor: 'pointer', textDecoration: 'underline' }}
                   >
                     Inspect Intervals &rarr;
                   </button>
@@ -153,7 +153,7 @@ export const OverviewView: React.FC<Props> = ({ data, onSelectInterval, onNaviga
 
         {/* Governance & Integrity Card */}
         <div className="card-glass" style={{ padding: 22 }}>
-          <h3 style={{ fontSize: '0.9rem', fontWeight: 700, color: '#fff', marginBottom: 14, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+          <h3 style={{ fontSize: '0.9rem', fontWeight: 700, color: 'var(--foreground)', marginBottom: 14, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
             Decision-Support Governance
           </h3>
 

@@ -31,7 +31,7 @@ export const AccuracyView: React.FC<Props> = ({ accuracyData, loading }) => {
           <div style={{ fontSize: '0.76rem', color: 'var(--text-dim)', textTransform: 'uppercase', fontWeight: 600 }}>
             Mean Absolute Error (MAE)
           </div>
-          <div className="mono-num" style={{ fontSize: '1.8rem', fontWeight: 700, color: '#38bdf8', margin: '6px 0' }}>
+          <div className="mono-num" style={{ fontSize: '1.8rem', fontWeight: 700, color: '#0284c7', margin: '6px 0' }}>
             {formatMW(metrics.mae_mw)}
           </div>
           <p style={{ fontSize: '0.78rem', color: 'var(--text-muted)', lineHeight: 1.4 }}>
@@ -44,7 +44,7 @@ export const AccuracyView: React.FC<Props> = ({ accuracyData, loading }) => {
           <div style={{ fontSize: '0.76rem', color: 'var(--text-dim)', textTransform: 'uppercase', fontWeight: 600 }}>
             Root Mean Squared Error (RMSE)
           </div>
-          <div className="mono-num" style={{ fontSize: '1.8rem', fontWeight: 700, color: '#818cf8', margin: '6px 0' }}>
+          <div className="mono-num" style={{ fontSize: '1.8rem', fontWeight: 700, color: '#4f46e5', margin: '6px 0' }}>
             {formatMW(metrics.rmse_mw)}
           </div>
           <p style={{ fontSize: '0.78rem', color: 'var(--text-muted)', lineHeight: 1.4 }}>
@@ -62,7 +62,7 @@ export const AccuracyView: React.FC<Props> = ({ accuracyData, loading }) => {
             style={{
               fontSize: '1.8rem',
               fontWeight: 700,
-              color: (metrics.mbe_mw ?? 0) > 0 ? '#fbbf24' : '#a5b4fc',
+              color: (metrics.mbe_mw ?? 0) > 0 ? '#b45309' : '#4338ca',
               margin: '6px 0'
             }}
           >
@@ -80,7 +80,7 @@ export const AccuracyView: React.FC<Props> = ({ accuracyData, loading }) => {
       <div className="card-glass" style={{ padding: 24 }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 20 }}>
           <div>
-            <h3 style={{ fontSize: '1.05rem', fontWeight: 700, color: '#fff', marginBottom: 4 }}>
+            <h3 style={{ fontSize: '1.05rem', fontWeight: 700, color: 'var(--foreground)', marginBottom: 4 }}>
               Forecast Error Distribution (MW)
             </h3>
             <p style={{ fontSize: '0.8rem', color: 'var(--text-dim)' }}>
@@ -117,7 +117,7 @@ export const AccuracyView: React.FC<Props> = ({ accuracyData, loading }) => {
                     justifyContent: 'flex-end'
                   }}
                 >
-                  <span className="mono-num" style={{ fontSize: '0.7rem', color: 'var(--text-muted)', marginBottom: 4 }}>
+                  <span className="mono-num" style={{ fontSize: '0.7rem', color: 'var(--text-dim)', marginBottom: 4 }}>
                     {bucket.count > 0 ? bucket.count : ''}
                   </span>
                   <div
@@ -125,10 +125,10 @@ export const AccuracyView: React.FC<Props> = ({ accuracyData, loading }) => {
                       width: '100%',
                       height: `${Math.max(heightPct, 2)}%`,
                       background: isOver
-                        ? 'linear-gradient(180deg, #f59e0b 0%, rgba(245, 158, 11, 0.4) 100%)'
-                        : 'linear-gradient(180deg, #6366f1 0%, rgba(99, 102, 241, 0.4) 100%)',
+                        ? 'linear-gradient(180deg, #d97706 0%, rgba(217, 119, 6, 0.3) 100%)'
+                        : 'linear-gradient(180deg, #4f46e5 0%, rgba(79, 70, 229, 0.3) 100%)',
                       borderRadius: '4px 4px 0 0',
-                      border: isOver ? '1px solid #fbbf24' : '1px solid #818cf8',
+                      border: isOver ? '1px solid #b45309' : '1px solid #4338ca',
                       transition: 'height 0.3s ease'
                     }}
                     title={`${bucket.bin_range}: ${bucket.count} intervals`}
@@ -162,7 +162,7 @@ export const AccuracyView: React.FC<Props> = ({ accuracyData, loading }) => {
 
       {/* Daily Performance Table */}
       <div className="card-glass table-wrap" style={{ padding: 20 }}>
-        <h3 style={{ fontSize: '1.05rem', fontWeight: 700, color: '#fff', marginBottom: 14 }}>
+        <h3 style={{ fontSize: '1.05rem', fontWeight: 700, color: 'var(--foreground)', marginBottom: 14 }}>
           Daily Accuracy Breakdown (31 Days)
         </h3>
 
@@ -183,21 +183,21 @@ export const AccuracyView: React.FC<Props> = ({ accuracyData, loading }) => {
               const isOver = (day.mbe_mw ?? 0) > 0;
               return (
                 <tr key={idx}>
-                  <td className="mono-num" style={{ fontWeight: 600, color: '#fff' }}>
+                  <td className="mono-num" style={{ fontWeight: 600, color: 'var(--foreground)' }}>
                     {day.date}
                   </td>
                   <td className="mono-num">{day.sample_count}</td>
-                  <td className="mono-num" style={{ color: '#38bdf8', fontWeight: 600 }}>
+                  <td className="mono-num" style={{ color: '#0284c7', fontWeight: 600 }}>
                     {formatMW(day.mae_mw)}
                   </td>
-                  <td className="mono-num" style={{ color: '#818cf8', fontWeight: 600 }}>
+                  <td className="mono-num" style={{ color: '#4f46e5', fontWeight: 600 }}>
                     {formatMW(day.rmse_mw)}
                   </td>
                   <td
                     className="mono-num"
                     style={{
                       fontWeight: 700,
-                      color: day.mbe_mw === null ? 'var(--text-dim)' : isOver ? '#fbbf24' : '#a5b4fc'
+                      color: day.mbe_mw === null ? 'var(--text-dim)' : isOver ? '#b45309' : '#4338ca'
                     }}
                   >
                     {formatSignedMW(day.mbe_mw)}

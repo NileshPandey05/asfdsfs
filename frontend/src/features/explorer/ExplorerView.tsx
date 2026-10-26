@@ -178,7 +178,7 @@ export const ExplorerView: React.FC<Props> = ({
                     onClick={() => onSelectInterval(row)}
                     id={`interval-row-${idx}`}
                   >
-                    <td className="mono-num" style={{ fontWeight: 600, color: '#fff' }}>
+                    <td className="mono-num" style={{ fontWeight: 600, color: 'var(--foreground)' }}>
                       {formatUKTime(row.start_time)}
                     </td>
                     <td className="mono-num" style={{ color: 'var(--text-dim)', fontSize: '0.78rem' }}>
@@ -201,8 +201,8 @@ export const ExplorerView: React.FC<Props> = ({
                           row.error_mw === null
                             ? 'var(--text-dim)'
                             : isOver
-                            ? '#fbbf24'
-                            : '#a5b4fc'
+                            ? '#b45309'
+                            : '#4338ca'
                       }}
                     >
                       {formatSignedMW(row.error_mw)}
@@ -217,9 +217,9 @@ export const ExplorerView: React.FC<Props> = ({
                           onSelectInterval(row);
                         }}
                         style={{
-                          background: 'rgba(56, 189, 248, 0.1)',
-                          border: '1px solid rgba(56, 189, 248, 0.3)',
-                          color: '#38bdf8',
+                          background: 'rgba(2, 132, 199, 0.08)',
+                          border: '1px solid rgba(2, 132, 199, 0.25)',
+                          color: '#0284c7',
                           padding: '5px 10px',
                           borderRadius: 6,
                           fontSize: '0.75rem',

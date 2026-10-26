@@ -46,7 +46,7 @@ export const VintageAuditDrawer: React.FC<Props> = ({ row, cutoffHour, onClose }
               <span className="badge badge-scope">Interval Audit Trace</span>
               <span className="badge badge-matched">{row.status}</span>
             </div>
-            <h2 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#fff' }}>
+            <h2 style={{ fontSize: '1.25rem', fontWeight: 700, color: 'var(--foreground)' }}>
               Delivery Interval: {formatUKDateTime(row.start_time)}
             </h2>
           </div>
@@ -56,13 +56,13 @@ export const VintageAuditDrawer: React.FC<Props> = ({ row, cutoffHour, onClose }
         </div>
 
         {/* Summary Card */}
-        <div className="card-glass" style={{ padding: 18, marginBottom: 24, background: 'rgba(15, 23, 42, 0.9)' }}>
+        <div className="card-glass" style={{ padding: 18, marginBottom: 24, background: 'var(--secondary)', border: '1px solid var(--border)' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14 }}>
             <div>
               <div style={{ fontSize: '0.74rem', color: 'var(--text-dim)', textTransform: 'uppercase', fontWeight: 600 }}>
                 Decision Cutoff
               </div>
-              <div className="mono-num" style={{ fontSize: '0.92rem', color: '#fff', fontWeight: 600 }}>
+              <div className="mono-num" style={{ fontSize: '0.92rem', color: 'var(--foreground)', fontWeight: 600 }}>
                 {formatUKDateTime(row.decision_cutoff)}
               </div>
             </div>
@@ -94,7 +94,7 @@ export const VintageAuditDrawer: React.FC<Props> = ({ row, cutoffHour, onClose }
                 style={{
                   fontSize: '0.92rem',
                   fontWeight: 700,
-                  color: (row.error_mw ?? 0) > 0 ? '#fbbf24' : '#a5b4fc'
+                  color: (row.error_mw ?? 0) > 0 ? '#b45309' : '#4338ca'
                 }}
               >
                 {formatSignedMW(row.error_mw)}
@@ -106,8 +106,8 @@ export const VintageAuditDrawer: React.FC<Props> = ({ row, cutoffHour, onClose }
         {/* Logic Rule Explanation */}
         <div
           style={{
-            background: 'rgba(56, 189, 248, 0.08)',
-            border: '1px solid rgba(56, 189, 248, 0.25)',
+            background: 'rgba(2, 132, 199, 0.08)',
+            border: '1px solid rgba(2, 132, 199, 0.25)',
             borderRadius: 10,
             padding: 14,
             marginBottom: 24,
@@ -116,7 +116,7 @@ export const VintageAuditDrawer: React.FC<Props> = ({ row, cutoffHour, onClose }
             lineHeight: 1.5
           }}
         >
-          <div style={{ fontWeight: 600, color: '#38bdf8', marginBottom: 4, display: 'flex', alignItems: 'center', gap: 6 }}>
+          <div style={{ fontWeight: 600, color: '#0284c7', marginBottom: 4, display: 'flex', alignItems: 'center', gap: 6 }}>
             <Clock size={15} />
             Vintage Selection Business Rule
           </div>
@@ -127,7 +127,7 @@ export const VintageAuditDrawer: React.FC<Props> = ({ row, cutoffHour, onClose }
 
         {/* Vintages Waterfall List */}
         <div style={{ flex: 1 }}>
-          <h3 style={{ fontSize: '0.9rem', fontWeight: 700, color: '#fff', marginBottom: 12, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+          <h3 style={{ fontSize: '0.9rem', fontWeight: 700, color: 'var(--foreground)', marginBottom: 12, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
             All Published Forecast Vintages ({data?.vintages.length ?? 0})
           </h3>
 
@@ -138,7 +138,7 @@ export const VintageAuditDrawer: React.FC<Props> = ({ row, cutoffHour, onClose }
           )}
 
           {error && (
-            <div style={{ padding: 16, background: 'rgba(239, 68, 68, 0.1)', border: '1px solid var(--color-danger)', borderRadius: 8, color: '#f87171' }}>
+            <div style={{ padding: 16, background: 'rgba(220, 38, 38, 0.1)', border: '1px solid var(--color-danger)', borderRadius: 8, color: '#b91c1c' }}>
               {error}
             </div>
           )}
@@ -158,16 +158,16 @@ export const VintageAuditDrawer: React.FC<Props> = ({ row, cutoffHour, onClose }
                   style={{
                     padding: 14,
                     background: v.is_selected
-                      ? 'rgba(2, 132, 199, 0.18)'
+                      ? 'rgba(2, 132, 199, 0.08)'
                       : v.is_eligible
-                      ? 'rgba(15, 23, 42, 0.6)'
-                      : 'rgba(239, 68, 68, 0.05)',
+                      ? '#ffffff'
+                      : 'rgba(220, 38, 38, 0.04)',
                     border: v.is_selected
-                      ? '1px solid rgba(56, 189, 248, 0.6)'
+                      ? '1.5px solid #0284c7'
                       : v.is_eligible
-                      ? '1px solid var(--border-subtle)'
-                      : '1px dashed rgba(239, 68, 68, 0.3)',
-                    boxShadow: v.is_selected ? '0 0 15px rgba(56, 189, 248, 0.15)' : 'none'
+                      ? '1px solid var(--border)'
+                      : '1px dashed rgba(220, 38, 38, 0.25)',
+                    boxShadow: v.is_selected ? '0 2px 8px rgba(2, 132, 199, 0.15)' : 'none'
                   }}
                 >
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 6 }}>
@@ -177,20 +177,20 @@ export const VintageAuditDrawer: React.FC<Props> = ({ row, cutoffHour, onClose }
                           <Star size={12} fill="#fff" /> SELECTED
                         </span>
                       ) : v.is_eligible ? (
-                        <span className="badge" style={{ background: 'rgba(16, 185, 129, 0.12)', color: '#34d399' }}>
+                        <span className="badge badge-matched">
                           Eligible
                         </span>
                       ) : (
-                        <span className="badge" style={{ background: 'rgba(239, 68, 68, 0.12)', color: '#f87171' }}>
+                        <span className="badge badge-missing-actual">
                           Disqualified (Post-Cutoff)
                         </span>
                       )}
-                      <span className="mono-num" style={{ fontSize: '0.84rem', fontWeight: 600, color: '#fff' }}>
+                      <span className="mono-num" style={{ fontSize: '0.84rem', fontWeight: 600, color: 'var(--foreground)' }}>
                         {formatUKDateTime(v.publish_time)}
                       </span>
                     </div>
 
-                    <div className="mono-num" style={{ fontSize: '1.05rem', fontWeight: 700, color: v.is_selected ? '#38bdf8' : '#fff' }}>
+                    <div className="mono-num" style={{ fontSize: '1.05rem', fontWeight: 700, color: v.is_selected ? '#0284c7' : 'var(--foreground)' }}>
                       {formatMW(v.generation_mw)}
                     </div>
                   </div>
@@ -202,7 +202,7 @@ export const VintageAuditDrawer: React.FC<Props> = ({ row, cutoffHour, onClose }
                         : `Published ${Math.abs(v.time_before_cutoff_minutes ?? 0).toFixed(0)} mins after gate closure`}
                     </span>
                     {v.is_selected && (
-                      <span style={{ color: '#38bdf8', fontWeight: 600 }}>
+                      <span style={{ color: '#0284c7', fontWeight: 600 }}>
                         &check; Latest available before decision cutoff
                       </span>
                     )}

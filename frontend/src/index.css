@@ -1,31 +1,65 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 
 :root {
-  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
+  /* Fonts */
+  --font-sans: 'Plus Jakarta Sans', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
-  --bg-app: #06090e;
-  --bg-surface: #0b111e;
-  --bg-card: rgba(15, 23, 42, 0.75);
-  --bg-card-hover: rgba(22, 33, 58, 0.85);
-  --bg-panel: #111a2e;
-  --border-subtle: rgba(148, 163, 184, 0.1);
-  --border-card: rgba(148, 163, 184, 0.18);
-  --border-active: rgba(56, 189, 248, 0.5);
+  /* Chalk Theme Tokens (tweakcn cmmjgn9pc000404lg7c2q0fl6 - Light Theme Only) */
+  --background: oklch(0.9745 0.0079 253.8524);
+  --foreground: oklch(0.1443 0.0191 261.1564);
+  --card: oklch(0.9897 0.0051 247.8755);
+  --card-foreground: oklch(0.1443 0.0191 261.1564);
+  --popover: oklch(0.9897 0.0051 247.8755);
+  --popover-foreground: oklch(0.1443 0.0191 261.1564);
+  --primary: oklch(0.2038 0.0264 260.9332);
+  --primary-foreground: oklch(0.9851 0 0);
+  --secondary: oklch(0.9442 0.0137 258.3455);
+  --secondary-foreground: oklch(0.2038 0.0264 260.9332);
+  --muted: oklch(0.9442 0.0137 258.3455);
+  --muted-foreground: oklch(0.5195 0.0188 262.6912);
+  --accent: oklch(0.9442 0.0137 258.3455);
+  --accent-foreground: oklch(0.2038 0.0264 260.9332);
+  --destructive: oklch(0.5770 0.2450 27.3250);
+  --destructive-foreground: oklch(1 0 0);
+  --border: oklch(0.9013 0.0156 257.2001);
+  --input: oklch(0.9013 0.0156 257.2001);
+  --ring: oklch(0.6503 0.0220 257.4949);
+  --radius: 0.625rem;
 
-  --text-main: #f8fafc;
-  --text-muted: #94a3b8;
-  --text-dim: #64748b;
+  --chart-1: oklch(0.8100 0.1000 252);
+  --chart-2: oklch(0.6200 0.1900 260);
+  --chart-3: oklch(0.5500 0.2200 263);
+  --chart-4: oklch(0.4900 0.2200 264);
+  --chart-5: oklch(0.4200 0.1800 266);
 
-  --color-forecast: #00d2ff;
-  --color-actual: #10b981;
-  --color-overforecast: #f59e0b;
-  --color-underforecast: #818cf8;
-  --color-accent: #38bdf8;
-  --color-danger: #ef4444;
+  /* Semantic UI Tokens mapped to Chalk Light */
+  --bg-app: var(--background);
+  --bg-surface: var(--card);
+  --bg-card: var(--card);
+  --bg-card-hover: oklch(0.965 0.008 254);
+  --bg-panel: var(--card);
+  --border-subtle: var(--border);
+  --border-card: var(--border);
+  --border-active: #0284c7;
 
-  --glow-cyan: 0 0 25px rgba(0, 210, 255, 0.18);
-  --glow-emerald: 0 0 25px rgba(16, 185, 129, 0.18);
+  --text-main: var(--foreground);
+  --text-muted: var(--muted-foreground);
+  --text-dim: oklch(0.62 0.015 260);
+
+  /* High-Contrast Analytics Line and Metric Accents for Light Mode */
+  --color-forecast: #0284c7;
+  --color-actual: #059669;
+  --color-overforecast: #d97706;
+  --color-underforecast: #4f46e5;
+  --color-accent: #0284c7;
+  --color-danger: #dc2626;
+
+  /* Shadows from Chalk Theme */
+  --shadow-sm: 0 1px 3px 0px hsl(0 0% 0% / 0.06), 0 1px 2px -1px hsl(0 0% 0% / 0.06);
+  --shadow-md: 0 4px 6px -1px hsl(0 0% 0% / 0.07), 0 2px 4px -2px hsl(0 0% 0% / 0.07);
+  --shadow-lg: 0 10px 15px -3px hsl(0 0% 0% / 0.08), 0 4px 6px -4px hsl(0 0% 0% / 0.08);
+  --shadow-xl: 0 20px 25px -5px hsl(0 0% 0% / 0.10), 0 8px 10px -6px hsl(0 0% 0% / 0.10);
 }
 
 * {
@@ -49,39 +83,39 @@ body {
   letter-spacing: -0.02em;
 }
 
-/* Background Atmospheric Glow */
+/* Background Atmospheric Canvas in Chalk Light */
 .app-container {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   position: relative;
+  background-color: var(--bg-app);
   background-image:
-    radial-gradient(at 0% 0%, rgba(2, 132, 199, 0.12) 0px, transparent 50%),
-    radial-gradient(at 100% 0%, rgba(16, 185, 129, 0.08) 0px, transparent 50%),
-    radial-gradient(at 50% 100%, rgba(99, 102, 241, 0.08) 0px, transparent 50%);
+    radial-gradient(at 0% 0%, rgba(2, 132, 199, 0.04) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(5, 150, 105, 0.03) 0px, transparent 50%),
+    radial-gradient(at 50% 100%, rgba(99, 102, 241, 0.03) 0px, transparent 50%);
   background-attachment: fixed;
 }
 
-/* Glassmorphism Cards */
+/* Cards & Surfaces */
 .card-glass {
   background: var(--bg-card);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
   border: 1px solid var(--border-card);
-  border-radius: 14px;
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  transition: border-color 0.18s ease, box-shadow 0.18s ease;
 }
 
 .card-glass:hover {
-  border-color: rgba(56, 189, 248, 0.3);
+  border-color: oklch(0.82 0.02 258);
+  box-shadow: var(--shadow-md);
 }
 
 /* Top Navigation Bar */
 .navbar {
   height: 72px;
   border-bottom: 1px solid var(--border-subtle);
-  background: rgba(6, 9, 14, 0.85);
+  background: rgba(255, 255, 255, 0.88);
   backdrop-filter: blur(12px);
   position: sticky;
   top: 0;
@@ -90,6 +124,7 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 0 28px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.03);
 }
 
 .nav-brand {
@@ -102,19 +137,19 @@ body {
   width: 40px;
   height: 40px;
   border-radius: 10px;
-  background: linear-gradient(135deg, #0284c7 0%, #06b6d4 100%);
+  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
-  box-shadow: 0 0 20px rgba(6, 182, 212, 0.4);
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
 }
 
 .nav-title {
   font-size: 1.15rem;
   font-weight: 700;
   letter-spacing: -0.02em;
-  color: #ffffff;
+  color: var(--foreground);
 }
 
 .nav-subtitle {
@@ -128,40 +163,40 @@ body {
 .nav-tabs {
   display: flex;
   align-items: center;
-  background: rgba(15, 23, 42, 0.6);
+  background: var(--secondary);
   border: 1px solid var(--border-subtle);
-  border-radius: 10px;
-  padding: 4px;
-  gap: 4px;
+  border-radius: 9px;
+  padding: 3px;
+  gap: 3px;
 }
 
 .nav-tab-btn {
   background: transparent;
   border: none;
-  color: var(--text-muted);
+  color: var(--muted-foreground);
   font-family: var(--font-sans);
   font-size: 0.86rem;
   font-weight: 500;
-  padding: 8px 16px;
+  padding: 7px 15px;
   border-radius: 7px;
   cursor: pointer;
   display: flex;
   align-items: center;
   gap: 8px;
-  transition: all 0.18s ease;
+  transition: all 0.15s ease;
 }
 
 .nav-tab-btn:hover {
-  color: var(--text-main);
-  background: rgba(255, 255, 255, 0.05);
+  color: var(--foreground);
+  background: rgba(255, 255, 255, 0.6);
 }
 
 .nav-tab-btn.active {
-  background: linear-gradient(135deg, rgba(2, 132, 199, 0.25), rgba(6, 182, 212, 0.18));
-  color: #38bdf8;
-  border: 1px solid rgba(56, 189, 248, 0.4);
+  background: #ffffff;
+  color: var(--foreground);
+  border: 1px solid var(--border);
   font-weight: 600;
-  box-shadow: 0 0 12px rgba(56, 189, 248, 0.2);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
 }
 
 /* Control Bar */
@@ -171,15 +206,15 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  padding: 16px 28px;
+  padding: 14px 28px;
   border-bottom: 1px solid var(--border-subtle);
-  background: rgba(11, 17, 30, 0.4);
+  background: rgba(255, 255, 255, 0.6);
 }
 
 .control-group {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
 }
 
 .control-label {
@@ -191,20 +226,22 @@ body {
 }
 
 .control-select, .control-input {
-  background: var(--bg-surface);
-  border: 1px solid var(--border-card);
-  color: var(--text-main);
+  background: #ffffff;
+  border: 1px solid var(--border);
+  color: var(--foreground);
   font-family: var(--font-sans);
   font-size: 0.84rem;
   padding: 7px 12px;
   border-radius: 8px;
   outline: none;
   cursor: pointer;
-  transition: border-color 0.15s;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  transition: border-color 0.15s, box-shadow 0.15s;
 }
 
 .control-select:focus, .control-input:focus {
   border-color: var(--color-accent);
+  box-shadow: 0 0 0 2px rgba(2, 132, 199, 0.15);
 }
 
 /* KPI Cards Grid */
@@ -219,6 +256,8 @@ body {
   padding: 22px;
   position: relative;
   overflow: hidden;
+  background: #ffffff;
+  border: 1px solid var(--border);
 }
 
 .kpi-card::before {
@@ -228,7 +267,7 @@ body {
   left: 0;
   right: 0;
   height: 3px;
-  background: var(--kpi-accent, var(--border-card));
+  background: var(--kpi-accent, var(--border));
 }
 
 .kpi-header {
@@ -239,29 +278,29 @@ body {
 }
 
 .kpi-title {
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: var(--text-muted);
+  color: var(--muted-foreground);
 }
 
 .kpi-icon-wrap {
   width: 32px;
   height: 32px;
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.04);
+  background: var(--secondary);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--kpi-accent, var(--text-muted));
+  color: var(--kpi-accent, var(--muted-foreground));
 }
 
 .kpi-value {
   font-size: 1.85rem;
   font-weight: 700;
   line-height: 1.1;
-  color: #ffffff;
+  color: var(--foreground);
   margin-bottom: 6px;
 }
 
@@ -283,45 +322,46 @@ body {
 }
 
 .badge-matched {
-  background: rgba(16, 185, 129, 0.15);
-  color: #34d399;
-  border: 1px solid rgba(52, 211, 153, 0.35);
+  background: rgba(5, 150, 105, 0.1);
+  color: #047857;
+  border: 1px solid rgba(5, 150, 105, 0.25);
 }
 
 .badge-no-forecast {
-  background: rgba(245, 158, 11, 0.12);
-  color: #fbbf24;
-  border: 1px solid rgba(251, 191, 36, 0.3);
+  background: rgba(217, 119, 6, 0.1);
+  color: #b45309;
+  border: 1px solid rgba(217, 119, 6, 0.25);
 }
 
 .badge-missing-actual {
-  background: rgba(239, 68, 68, 0.12);
-  color: #f87171;
-  border: 1px solid rgba(248, 113, 113, 0.3);
+  background: rgba(220, 38, 38, 0.1);
+  color: #b91c1c;
+  border: 1px solid rgba(220, 38, 38, 0.25);
 }
 
 .badge-scope {
-  background: rgba(56, 189, 248, 0.1);
-  color: #38bdf8;
-  border: 1px solid rgba(56, 189, 248, 0.25);
+  background: var(--secondary);
+  color: var(--secondary-foreground);
+  border: 1px solid var(--border);
 }
 
 .badge-live {
-  background: rgba(16, 185, 129, 0.2);
-  color: #10b981;
-  border: 1px solid rgba(16, 185, 129, 0.4);
+  background: rgba(5, 150, 105, 0.12);
+  color: #047857;
+  border: 1px solid rgba(5, 150, 105, 0.3);
 }
 
 .badge-cached {
-  background: rgba(148, 163, 184, 0.15);
-  color: #94a3b8;
-  border: 1px solid rgba(148, 163, 184, 0.3);
+  background: var(--secondary);
+  color: var(--muted-foreground);
+  border: 1px solid var(--border);
 }
 
-/* Interactive SVG Chart */
+/* Interactive SVG Chart in Chalk Light */
 .chart-container {
   padding: 24px;
   position: relative;
+  background: #ffffff;
 }
 
 .chart-header {
@@ -343,8 +383,9 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 0.8rem;
-  color: var(--text-muted);
+  font-size: 0.82rem;
+  color: var(--muted-foreground);
+  font-weight: 500;
 }
 
 .legend-swatch {
@@ -359,10 +400,13 @@ body {
   position: relative;
 }
 
-/* Data Tables */
+/* Data Tables in Chalk Light */
 .table-wrap {
   width: 100%;
   overflow-x: auto;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
 }
 
 .data-table {
@@ -373,14 +417,14 @@ body {
 }
 
 .data-table th {
-  background: rgba(15, 23, 42, 0.9);
+  background: var(--secondary);
   padding: 12px 16px;
   color: var(--text-dim);
   font-weight: 600;
   text-transform: uppercase;
   font-size: 0.72rem;
   letter-spacing: 0.05em;
-  border-bottom: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border);
   position: sticky;
   top: 0;
   z-index: 10;
@@ -388,21 +432,21 @@ body {
 
 .data-table td {
   padding: 14px 16px;
-  border-bottom: 1px solid rgba(148, 163, 184, 0.06);
-  color: var(--text-main);
+  border-bottom: 1px solid oklch(0.95 0.008 255);
+  color: var(--foreground);
   transition: background 0.12s ease;
 }
 
 .data-table tr.clickable:hover td {
-  background: rgba(56, 189, 248, 0.06);
+  background: oklch(0.965 0.01 254);
   cursor: pointer;
 }
 
-/* Vintage Waterfall Drawer */
+/* Vintage Waterfall Drawer in Chalk Light */
 .drawer-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(19, 23, 34, 0.45);
   backdrop-filter: blur(4px);
   z-index: 100;
   display: flex;
@@ -413,13 +457,13 @@ body {
   width: 100%;
   max-width: 580px;
   height: 100%;
-  background: #0c121e;
-  border-left: 1px solid var(--border-card);
+  background: #ffffff;
+  border-left: 1px solid var(--border);
   padding: 32px 28px;
   display: flex;
   flex-direction: column;
   overflow-y: auto;
-  box-shadow: -15px 0 40px rgba(0, 0, 0, 0.6);
+  box-shadow: -15px 0 40px rgba(0, 0, 0, 0.12);
   animation: slideIn 0.25s ease-out;
 }
 
@@ -429,9 +473,9 @@ body {
 }
 
 .drawer-close-btn {
-  background: transparent;
-  border: 1px solid var(--border-card);
-  color: var(--text-muted);
+  background: var(--secondary);
+  border: 1px solid var(--border);
+  color: var(--muted-foreground);
   width: 32px;
   height: 32px;
   border-radius: 8px;
@@ -439,25 +483,26 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all 0.15s;
 }
 
 .drawer-close-btn:hover {
-  color: #fff;
-  border-color: var(--text-muted);
+  color: var(--foreground);
+  background: var(--border);
 }
 
-/* Tooltip */
+/* Tooltip in Chalk Light */
 .chart-tooltip {
   position: absolute;
   pointer-events: none;
-  background: rgba(15, 23, 42, 0.95);
-  border: 1px solid var(--border-active);
+  background: #ffffff;
+  border: 1px solid var(--border);
   border-radius: 10px;
   padding: 12px 16px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+  box-shadow: var(--shadow-lg);
   font-size: 0.8rem;
   z-index: 40;
-  min-width: 200px;
+  min-width: 220px;
 }
 
 /* Custom Scrollbars */
@@ -466,12 +511,12 @@ body {
   height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--bg-app);
+  background: var(--background);
 }
 ::-webkit-scrollbar-thumb {
-  background: #1e293b;
+  background: oklch(0.85 0.015 258);
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #334155;
+  background: oklch(0.75 0.02 260);
 }

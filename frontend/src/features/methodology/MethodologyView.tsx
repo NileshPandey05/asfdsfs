@@ -11,7 +11,7 @@ export const MethodologyView: React.FC<Props> = ({ data }) => {
     <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }} id="methodology-view">
       {/* Title */}
       <div className="card-glass" style={{ padding: 24 }}>
-        <h2 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#fff', marginBottom: 8 }}>
+        <h2 style={{ fontSize: '1.25rem', fontWeight: 700, color: 'var(--foreground)', marginBottom: 8 }}>
           Methodology, Data Quality & Governance
         </h2>
         <p style={{ fontSize: '0.86rem', color: 'var(--text-muted)', lineHeight: 1.5 }}>
@@ -25,21 +25,21 @@ export const MethodologyView: React.FC<Props> = ({ data }) => {
         {/* Upstream Sources Card */}
         <div className="card-glass" style={{ padding: 22 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 14 }}>
-            <Database size={20} color="#38bdf8" />
-            <h3 style={{ fontSize: '0.95rem', fontWeight: 700, color: '#fff' }}>
+            <Database size={20} color="#0284c7" />
+            <h3 style={{ fontSize: '0.95rem', fontWeight: 700, color: 'var(--foreground)' }}>
               Elexon Data Ingestion Endpoints
             </h3>
           </div>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: 14, fontSize: '0.82rem', color: 'var(--text-muted)' }}>
-            <div style={{ padding: 12, background: 'rgba(15, 23, 42, 0.7)', borderRadius: 8, border: '1px solid var(--border-subtle)' }}>
-              <div style={{ fontWeight: 600, color: '#fff', marginBottom: 4, display: 'flex', justifyContent: 'space-between' }}>
+            <div style={{ padding: 12, background: 'var(--secondary)', borderRadius: 8, border: '1px solid var(--border)' }}>
+              <div style={{ fontWeight: 600, color: 'var(--foreground)', marginBottom: 4, display: 'flex', justifyContent: 'space-between' }}>
                 <span>Actual Wind Generation (FUELHH)</span>
                 <a
                   href="https://bmrs.elexon.co.uk/api-documentation/endpoint/datasets/FUELHH/stream"
                   target="_blank"
                   rel="noreferrer"
-                  style={{ color: '#38bdf8', display: 'flex', alignItems: 'center', gap: 4, textDecoration: 'none' }}
+                  style={{ color: '#0284c7', display: 'flex', alignItems: 'center', gap: 4, textDecoration: 'none' }}
                 >
                   Docs <ExternalLink size={12} />
                 </a>
@@ -49,14 +49,14 @@ export const MethodologyView: React.FC<Props> = ({ data }) => {
               <div>Unit: Megawatts (<code>MW</code>)</div>
             </div>
 
-            <div style={{ padding: 12, background: 'rgba(15, 23, 42, 0.7)', borderRadius: 8, border: '1px solid var(--border-subtle)' }}>
-              <div style={{ fontWeight: 600, color: '#fff', marginBottom: 4, display: 'flex', justifyContent: 'space-between' }}>
+            <div style={{ padding: 12, background: 'var(--secondary)', borderRadius: 8, border: '1px solid var(--border)' }}>
+              <div style={{ fontWeight: 600, color: 'var(--foreground)', marginBottom: 4, display: 'flex', justifyContent: 'space-between' }}>
                 <span>Wind Generation Forecasts (WINDFOR)</span>
                 <a
                   href="https://bmrs.elexon.co.uk/api-documentation/endpoint/datasets/WINDFOR/stream"
                   target="_blank"
                   rel="noreferrer"
-                  style={{ color: '#38bdf8', display: 'flex', alignItems: 'center', gap: 4, textDecoration: 'none' }}
+                  style={{ color: '#0284c7', display: 'flex', alignItems: 'center', gap: 4, textDecoration: 'none' }}
                 >
                   Docs <ExternalLink size={12} />
                 </a>
@@ -71,8 +71,8 @@ export const MethodologyView: React.FC<Props> = ({ data }) => {
         {/* Gate Closure and Timing Card */}
         <div className="card-glass" style={{ padding: 22 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 14 }}>
-            <Clock size={20} color="#fbbf24" />
-            <h3 style={{ fontSize: '0.95rem', fontWeight: 700, color: '#fff' }}>
+            <Clock size={20} color="#b45309" />
+            <h3 style={{ fontSize: '0.95rem', fontWeight: 700, color: 'var(--foreground)' }}>
               Day-Ahead Decision Cutoff Mechanics
             </h3>
           </div>
@@ -89,7 +89,7 @@ export const MethodologyView: React.FC<Props> = ({ data }) => {
               <br />
               Only forecast vintages with <code>publishTime &le; Cutoff(T)</code> are eligible. We select the vintage with the maximum <code>publishTime</code> among eligible records.
             </p>
-            <div style={{ padding: 10, background: 'rgba(245, 158, 11, 0.08)', border: '1px solid rgba(245, 158, 11, 0.25)', borderRadius: 8, color: '#fbbf24' }}>
+            <div style={{ padding: 10, background: 'rgba(217, 119, 6, 0.08)', border: '1px solid rgba(217, 119, 6, 0.25)', borderRadius: 8, color: '#b45309' }}>
               <strong>Look-Ahead Bias Elimination:</strong> Selecting later forecasts published after gate closure would falsely inflate accuracy metrics. Our filter strictly guarantees timing integrity.
             </div>
           </div>
@@ -98,8 +98,8 @@ export const MethodologyView: React.FC<Props> = ({ data }) => {
         {/* Resolution Discrepancy & A4/A6 Compliance */}
         <div className="card-glass" style={{ padding: 22 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 14 }}>
-            <Layers size={20} color="#10b981" />
-            <h3 style={{ fontSize: '0.95rem', fontWeight: 700, color: '#fff' }}>
+            <Layers size={20} color="#059669" />
+            <h3 style={{ fontSize: '0.95rem', fontWeight: 700, color: 'var(--foreground)' }}>
               Temporal Resolution & Zero-Fill Integrity
             </h3>
           </div>
@@ -126,8 +126,8 @@ export const MethodologyView: React.FC<Props> = ({ data }) => {
         {/* Mathematical Formulas Card */}
         <div className="card-glass" style={{ padding: 22 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 14 }}>
-            <ShieldCheck size={20} color="#818cf8" />
-            <h3 style={{ fontSize: '0.95rem', fontWeight: 700, color: '#fff' }}>
+            <ShieldCheck size={20} color="#4f46e5" />
+            <h3 style={{ fontSize: '0.95rem', fontWeight: 700, color: 'var(--foreground)' }}>
               Formulas & Error Convention
             </h3>
           </div>
@@ -135,7 +135,7 @@ export const MethodologyView: React.FC<Props> = ({ data }) => {
           <div style={{ fontSize: '0.82rem', color: 'var(--text-muted)', lineHeight: 1.5, display: 'flex', flexDirection: 'column', gap: 12 }}>
             <div>
               <strong>Single Error Convention:</strong>
-              <div style={{ fontFamily: 'var(--font-mono)', padding: '6px 0', color: '#fff' }}>
+              <div style={{ fontFamily: 'var(--font-mono)', padding: '6px 0', color: 'var(--foreground)' }}>
                 e_i = Forecast_i - Actual_i
               </div>
               <ul style={{ paddingLeft: 18, marginTop: 4 }}>
@@ -146,21 +146,21 @@ export const MethodologyView: React.FC<Props> = ({ data }) => {
 
             <div>
               <strong>Mean Absolute Error (MAE):</strong>
-              <div style={{ fontFamily: 'var(--font-mono)', padding: '6px 0', color: '#38bdf8' }}>
+              <div style={{ fontFamily: 'var(--font-mono)', padding: '6px 0', color: '#0284c7' }}>
                 MAE = (1/n) * &Sigma; |Forecast_i - Actual_i|
               </div>
             </div>
 
             <div>
               <strong>Root Mean Squared Error (RMSE):</strong>
-              <div style={{ fontFamily: 'var(--font-mono)', padding: '6px 0', color: '#818cf8' }}>
+              <div style={{ fontFamily: 'var(--font-mono)', padding: '6px 0', color: '#4f46e5' }}>
                 RMSE = &radic;( (1/n) * &Sigma; (Forecast_i - Actual_i)&sup2; )
               </div>
             </div>
 
             <div>
               <strong>Mean Bias Error (MBE):</strong>
-              <div style={{ fontFamily: 'var(--font-mono)', padding: '6px 0', color: '#fbbf24' }}>
+              <div style={{ fontFamily: 'var(--font-mono)', padding: '6px 0', color: '#b45309' }}>
                 MBE = (1/n) * &Sigma; (Forecast_i - Actual_i)
               </div>
             </div>

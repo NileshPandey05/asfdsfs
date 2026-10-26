@@ -101,7 +101,7 @@ export const TimeSeriesChart: React.FC<Props> = ({ series, onSelectInterval }) =
     <div className="card-glass chart-container" id="time-series-card">
       <div className="chart-header">
         <div>
-          <h3 style={{ fontSize: '1.05rem', fontWeight: 700, color: '#fff', marginBottom: 4 }}>
+          <h3 style={{ fontSize: '1.05rem', fontWeight: 700, color: 'var(--foreground)', marginBottom: 4 }}>
             Day-Ahead Wind Forecast vs Actual Generation
           </h3>
           <p style={{ fontSize: '0.8rem', color: 'var(--text-dim)' }}>
@@ -164,7 +164,7 @@ export const TimeSeriesChart: React.FC<Props> = ({ series, onSelectInterval }) =
                   y1={y}
                   x2={width - padding.right}
                   y2={y}
-                  stroke="rgba(148, 163, 184, 0.1)"
+                  stroke="rgba(0, 0, 0, 0.07)"
                   strokeDasharray="4 4"
                 />
                 <text
@@ -211,10 +211,9 @@ export const TimeSeriesChart: React.FC<Props> = ({ series, onSelectInterval }) =
               d={forecastPath}
               fill="none"
               stroke="var(--color-forecast)"
-              strokeWidth="2.2"
+              strokeWidth="2.4"
               strokeLinecap="round"
               strokeLinejoin="round"
-              filter="drop-shadow(0 0 6px rgba(0, 210, 255, 0.35))"
             />
           )}
 
@@ -224,10 +223,9 @@ export const TimeSeriesChart: React.FC<Props> = ({ series, onSelectInterval }) =
               d={actualPath}
               fill="none"
               stroke="var(--color-actual)"
-              strokeWidth="2.2"
+              strokeWidth="2.4"
               strokeLinecap="round"
               strokeLinejoin="round"
-              filter="drop-shadow(0 0 6px rgba(16, 185, 129, 0.35))"
             />
           )}
 
@@ -239,7 +237,7 @@ export const TimeSeriesChart: React.FC<Props> = ({ series, onSelectInterval }) =
                 y1={padding.top}
                 x2={activePoint.x}
                 y2={height - padding.bottom}
-                stroke="rgba(255, 255, 255, 0.4)"
+                stroke="rgba(15, 23, 42, 0.3)"
                 strokeDasharray="3 3"
               />
 
@@ -277,7 +275,7 @@ export const TimeSeriesChart: React.FC<Props> = ({ series, onSelectInterval }) =
               top: 15
             }}
           >
-            <div style={{ fontWeight: 700, color: '#fff', marginBottom: 6, fontSize: '0.82rem' }}>
+            <div style={{ fontWeight: 700, color: 'var(--foreground)', marginBottom: 6, fontSize: '0.82rem' }}>
               {formatUKDateTime(activePoint.row.start_time)}
             </div>
 

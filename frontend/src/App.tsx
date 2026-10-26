@@ -205,7 +205,7 @@ export const App: React.FC = () => {
 
           {/* Resolution Mode Toggle */}
           <div className="control-group">
-            <Layers size={15} color="#10b981" />
+            <Layers size={15} color="#059669" />
             <span className="control-label">Resolution Join:</span>
             <select
               id="resolution-mode-select"
@@ -220,7 +220,7 @@ export const App: React.FC = () => {
 
           {/* Data Source Toggle */}
           <div className="control-group">
-            <Database size={15} color="#818cf8" />
+            <Database size={15} color="#4f46e5" />
             <span className="control-label">Source Mode:</span>
             <select
               id="data-source-select"
