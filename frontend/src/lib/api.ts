@@ -5,7 +5,10 @@ import {
   VintageHistoryResponse
 } from '../types/wind';
 
-const API_BASE = import.meta.env.VITE_API_URL || '/api';
+const rawApiUrl = (import.meta.env.VITE_API_URL || '/api').trim();
+const API_BASE = rawApiUrl.endsWith('/api')
+  ? rawApiUrl.replace(/\/+$/, '')
+  : rawApiUrl.replace(/\/+$/, '') + (rawApiUrl.startsWith('http') ? '/api' : '');
 
 export interface QueryOptions {
   month?: string;
