@@ -241,17 +241,6 @@ docker compose up --build
 - Frontend UI: `http://localhost:3000/`
 - Backend API: `http://localhost:8000/`
 
-### 9.3 Pushing Images to Docker Hub
-To push new builds of the tagged images:
-```bash
-# 1. Login to Docker Hub
-docker login -u nilesh2311
-
-# 2. Push both backend and frontend images
-docker push nilesh2311/wind-forecast-backend:latest
-docker push nilesh2311/wind-forecast-frontend:latest
-```
-
 ---
 
 ## 10. Running Test Suite
