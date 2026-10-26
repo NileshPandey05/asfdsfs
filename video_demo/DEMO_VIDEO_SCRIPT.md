@@ -1,32 +1,40 @@
 # Wind Forecast Intelligence — Official Video Demonstration Guide
 
-> **Total Video Duration:** ~9 Minutes (Under the 10-minute maximum limit)  
-> **Part 1 Duration:** 4m 15s (Customer / Pilot Project Presentation — Target: < 5 mins)  
-> **Part 2 Duration:** 4m 30s (Tech Lead Architecture & Codebase Review — Target: < 5 mins)  
-> **Voiceover Accent:** Indian English Neural Voice (`en-IN-PrabhatNeural`)  
+> **Total Video Duration:** 8 Minutes 07 Seconds *(Well within the 10-minute maximum limit)*  
+> **Part 1 Duration:** 3m 53s *(Customer Presentation — Target: < 5 mins)*  
+> **Part 2 Duration:** 4m 14s *(Tech Lead Architecture & Code Review — Target: < 5 mins)*  
+> **Voiceover Voice:** Natural American Tech Voice (`en-US-GuyNeural`)  
 > **Live Web App:** [https://asfdsfs-five.vercel.app/](https://asfdsfs-five.vercel.app/)  
-> **Live Backend API:** [https://asfdsfs.onrender.com/](https://asfdsfs.onrender.com/)  
+> **Live Backend API & Swagger Docs:** [https://asfdsfs.onrender.com/docs](https://asfdsfs.onrender.com/docs)  
 > **GitHub Repository:** [https://github.com/NileshPandey05/asfdsfs](https://github.com/NileshPandey05/asfdsfs)  
 
 ---
 
-## Quick Recording Options
+## 3 Easy Ways to Complete Your Demo Video
 
-You have two easy ways to complete your YouTube unlisted video:
+### Option 1: 1-Click Automated OBS Live Screen Recording (Recommended)
+This executes OBS screen capture while driving your live Chrome browser over CDP (`port 9222`) and playing the synchronized audio:
+```bash
+./video_demo/record_with_obs.sh
+```
+*When finished, your recorded video is automatically saved to `~/Documents/fatefour/` (or your default OBS recordings directory)!*
 
-### Option A: Use the Pre-Generated Video File (Zero Effort)
-An automated high-definition 1080p video (`video_demo/wind_forecast_intelligence_demo.mp4`) is generated with synchronized slides, UI screen captures, and Indian English narration.
-1. Simply go to [YouTube Studio](https://studio.youtube.com).
-2. Click **Create** → **Upload Videos**.
-3. Select `video_demo/wind_forecast_intelligence_demo.mp4`.
-4. Set Visibility to **Unlisted**.
-5. Copy the YouTube link for submission!
+---
 
-### Option B: Record Live in OBS Studio with the Generated Voiceover Audio
-1. Launch OBS Studio: `flatpak run com.obsproject.Studio` (or from your application menu).
-2. Add a **Screen Capture** source pointing to your browser showing `https://asfdsfs-five.vercel.app/`.
-3. Add a **Media Source** pointing to `video_demo/part1_customer_overview.mp3` and `video_demo/part2_tech_lead_review.mp3`.
-4. Hit **Start Recording** and click through the tabs and UI following the storyboard below!
+### Option 2: Upload Pre-Rendered Full HD Video to YouTube Directly (Zero Setup)
+A 1080p MP4 file with slides, UI captures, and audio is ready in your folder:
+- **File:** `video_demo/wind_forecast_intelligence_demo.mp4`
+1. Go to [YouTube Studio](https://studio.youtube.com).
+2. Click **Create** → **Upload Videos** and select `video_demo/wind_forecast_intelligence_demo.mp4`.
+3. Set Visibility to **Unlisted** and copy the link!
+
+---
+
+### Option 3: Manual Screen Recording in OBS Studio
+1. Open OBS Studio: `flatpak run com.obsproject.Studio`.
+2. Add **Screen Capture (PipeWire)** pointing to your Chrome browser window.
+3. Play the audio file `video_demo/full_wind_forecast_intelligence_demo.mp3` or speak live into your mic.
+4. Click through the application following the storyboard below!
 
 ---
 
