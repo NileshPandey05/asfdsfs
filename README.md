@@ -182,11 +182,15 @@ $$e_i = \text{Forecast}_i - \text{Actual}_i$$
 │   │   ├── index.css                  # Bloomberg-grade design system
 │   │   └── main.tsx                   # React root entrypoint
 │   ├── nginx.conf                     # Nginx proxy for containerized deployment
+│   ├── vercel.json                    # Vercel SPA rewrites & API reverse-proxy
 │   ├── package.json
 │   ├── tsconfig.json
 │   ├── vite.config.ts
 │   └── Dockerfile
 ├── docker-compose.yml                 # Multi-service container orchestration
+├── push_docker.sh                     # Automated Docker Hub login, tagging & push script
+├── render.yaml                        # Infrastructure-as-code blueprint for Render.com
+├── vercel.json                        # Root Vercel edge reverse-proxy configuration
 ├── .env.example                       # Environment variable templates
 └── README.md                          # Comprehensive documentation
 ```
